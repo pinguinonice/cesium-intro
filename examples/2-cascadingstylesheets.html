@@ -1,0 +1,55 @@
+<!--  Detailed discription goes here-->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JavaScript Radio Buttons</title>   <!--  title of website -->
+
+    <script>
+
+      // CHECK() is executed onClick -> when the radio buttuns are clicked
+      function Check(){
+
+        if (document.getElementById('Check1').checked == true) { // k if the buttons is checked
+          document.getElementById("image1").style.display = "inline"; // make the image visible
+        }
+        else {
+            document.getElementById("image1").style.display = "none";
+          }
+
+        if (document.getElementById('Check2').checked == true) {
+          document.getElementById("image2").style.display = "inline";
+        }
+        else {
+          document.getElementById("image2").style.display = "none";
+        }
+
+      }
+
+
+
+    </script>
+
+
+</head>
+<body>
+<!--  This is the actual content of the website
+Helpful links:
+HTML basics
+https://www.w3schools.com/html/
+Check box
+https://www.w3schools.com/tags/att_input_type_checkbox.asp
+Images
+https://www.w3schools.com/html/html_images.asp
+-->
+
+
+Check the radio buttons to show or hide the images. <br>
+<input type="checkbox" id="Check1" name="r1" value="0" onclick="Check()" > Image 1  <br>
+<input type="checkbox" id="Check2" name="r2" value="0" onclick="Check()" > Image 2  <br>
+
+<img src="http://www.lenna.org/len_std.jpg" width="500" height="500" id="image1" style="display: none;" >
+<img src="https://www.mathworks.com/help/examples/images/win64/GetImagesFromParentGraphicsObjectsExample_01.png" width="600" height="500" id="image2" style="display: none;" >
+
+</body>
+</html>
