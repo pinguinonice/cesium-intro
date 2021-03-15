@@ -1,0 +1,105 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <!--  Cesium Libary-->
+  <script src="https://cesium.com/downloads/cesiumjs/releases/1.78/Build/Cesium/Cesium.js"></script>
+  <link href="https://cesium.com/downloads/cesiumjs/releases/1.78/Build/Cesium/Widgets/widgets.css" rel="stylesheet">
+
+</head>
+<body>
+  <div id="cesiumContainer" style="width: 1400px; height:800px"></div>
+
+  <input type="checkbox" id="Check1" name="r1" value="0" onclick="Check()" > Point CLoud  <br>
+  <input type="checkbox" id="Check2" name="r2" value="0" onclick="Check()" >Mesh   <br>
+  <input type="checkbox" id="Check3" name="r3" value="0" onclick="Check()" > Image  <br>
+
+
+
+  <script>
+    // the acces token from cesium website
+    Cesium.Ion.defaultAccessToken = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiIxZTIxZDg4My00YjJkLTQzN2QtYmMxOC05Njk4ZGFkZTQzN2YiLCJpZCI6MTU1ODQsInNjb3BlcyI6WyJhc3IiLCJnYyJdLCJpYXQiOjE1NjgyMTc1MjN9.UDZ_I4jPXqWed_FjHIELbp016IuCNMBzsPexMe3jM3k';
+
+  //  create a new viewver with a DSM and base image
+  var viewer = new Cesium.Viewer("cesiumContainer", {
+    terrainProvider: new Cesium.CesiumTerrainProvider({  // this is the DSM
+      url: Cesium.IonResource.fromAssetId(109141),
+    }),
+    imageryProvider: Cesium.createWorldImagery({
+      style: Cesium.IonWorldImageryStyle.AERIAL   // this is the Baseimage
+    })
+  });
+
+
+
+    // ADD a point cloud
+    var tilesetPC = new Cesium.Cesium3DTileset({
+      url: Cesium.IonResource.fromAssetId(133178),   // this AssetID links to the files on the cesium ion server
+    });
+    viewer.scene.primitives.add(tilesetPC);
+
+
+
+    // ADD a mesh
+    var tilesetMS = new Cesium.Cesium3DTileset({
+      url: Cesium.IonResource.fromAssetId(109738),   // this AssetID links to the files on the cesium ion server
+    });
+    viewer.scene.primitives.add(tilesetMS);
+
+
+
+    // ADD an image
+    var imageryLayer_ortho = viewer.imageryLayers.addImageryProvider(
+      new Cesium.IonImageryProvider({
+        assetId: 133125
+      })
+    );
+
+
+    // zoom to the tileset
+    viewer.zoomTo(tilesetPC);
+
+
+
+    // CHECK() is executed onClick -> when the radio buttuns are clicked
+
+    function Check(){
+
+      if (document.getElementById('Check1').checked == true) { // k if the buttons is checked
+        tilesetPC.show = true; // make the image visible
+      }
+      else {
+        tilesetPC.show = false; // make the image visible
+        }
+
+      if (document.getElementById('Check2').checked == true) {
+        tilesetMS.show = true; // make the image visible
+      }
+      else {
+        tilesetMS.show = false; // make the image visible
+      }
+
+      if (document.getElementById('Check3').checked == true) {
+          imageryLayer_ortho.show = true;  // make the image visible
+      }
+      else {
+          imageryLayer_ortho.show  = false; // make the image visible
+      }
+
+    }
+
+
+
+
+    // execute CHECK() to show/hide the initial assets
+    Check()
+
+
+
+
+
+  </script>
+</body>
+</html>
