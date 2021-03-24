@@ -15,6 +15,8 @@ In "examples" you find four files.
 
 cascadingstylesheets.html is a short example how to use css to make "checkbox.html" more pleasing to the eye.
 
+![example2](https://user-images.githubusercontent.com/9204823/112308888-f05ab880-8ca2-11eb-9c38-0b3e927303e4.PNG)
+
 
 ## Cesium Hello World
 
