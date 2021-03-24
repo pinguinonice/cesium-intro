@@ -2,7 +2,7 @@
 
 The goal of this exercise is a short introduction to cesium.
 
-In "examples" you find four files.
+In "examples" you find five files.
 
 ## checkbox
 ![image](https://user-images.githubusercontent.com/9204823/111168162-147f1100-85a2-11eb-9137-77aead69cf24.png)
