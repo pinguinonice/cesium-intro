@@ -35,4 +35,4 @@ In "examples" you find five files.
  [6-cesium_time_dynamic_kml.html  ](https://github.com/pinguinonice/lab-visualisierung/blob/main/examples/6-cesium_time_dynamic_kml.html) is an example how to display a time dynamic trajectory, originally a .kml  uploaded to cesium ion. The .kml is similar to this example https://developers.google.com/kml/documentation/time?csw=1.
  [6-cesium_time_dynamic_local_kml.html  ](https://github.com/pinguinonice/lab-visualisierung/blob/main/examples/6-cesium_time_dynamic_local_kml.html)  Is the same example on a local file (Requires i.e. XAMPP for localhost).
 
-![image](docu\timedynamic.PNG)
+![image](docu/timedynamic.PNG)
