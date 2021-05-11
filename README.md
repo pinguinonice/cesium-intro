@@ -32,5 +32,5 @@ In "examples" you find five files.
 
 ## cesium Time Dynamic Trajectory
 
- [4-cesiumradiobuttons.html  ](https://github.com/pinguinonice/lab-visualisierung/blob/main/examples/4-cesiumradiobuttons.html) is an example how to display a time dynamic trajectory, originally a .kml  uploaded to cesium ion. The .kml is similiar to this example https://developers.google.com/kml/documentation/time?csw=1.
-![image](https://user-images.githubusercontent.com/9204823/111168418-58721600-85a2-11eb-9418-e8fae069e714.png)
+ [6-cesium_time_dynamic_kml.html  ](https://github.com/pinguinonice/lab-visualisierung/blob/main/examples/6-cesium_time_dynamic_kml.html) is an example how to display a time dynamic trajectory, originally a .kml  uploaded to cesium ion. The .kml is similiar to this example https://developers.google.com/kml/documentation/time?csw=1.
+![image](docu\timedynamic.PNG)
