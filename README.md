@@ -1,4 +1,4 @@
-# lab-visualisierung
+# Cesium Intro
 
 The goal of this exercise is a short introduction to cesium.
 
