@@ -45,35 +45,27 @@
 
 
 // ADD trajectory
-  // important: to have acces to local files you must install xampp https://www.apachefriends.org/de/index.html
-  // change the "DocumentRoot" apache folder in xampp to your project: https://stackoverflow.com/questions/18902887/how-to-configuring-a-xampp-web-server-for-different-root-directory
 
 
-var trajectory  = Cesium.IonResource.fromAssetId(446667)
-  .then(function (resource) {
-    return Cesium.KmlDataSource.load(resource, );
-  });
+// important: to have acces to local files you must install xampp https://www.apachefriends.org/de/index.html
+// change the "DocumentRoot" apache folder in xampp to your project: https://stackoverflow.com/questions/18902887/how-to-configuring-a-xampp-web-server-for-different-root-directory
+
+var trajectory = new Cesium.KmlDataSource(); //
+trajectory.load('data/kml/gelb_ellips.kml');
 
 Check(); // execute the Check() function, if Check1 == true, load the trajectory and zoom to it.
 
-
-// definition of check funtion
 function Check(){
 
-  if (document.getElementById('Check1').checked == true) { // k if the buttons is checked
+if (document.getElementById('Check1').checked == true) { // k if the buttons is checked
+  viewer.dataSources.add(trajectory);  // make the trajectory visible
+  viewer.zoomTo(trajectory);
+}
 
-    Cesium.when(trajectory, function(dataSource1){
-            viewer.dataSources.add(dataSource1); // make the trajectory visible
-            viewer.zoomTo(dataSource1);
-  });
-  }
-  else {
-    Cesium.when(trajectory, function(dataSource1){
-            viewer.dataSources.remove(dataSource1);// hide the trajectory
-        });
+else {
+  viewer.dataSources.remove(trajectory); // hide the trajectory
   }
 };
-
 
 
   </script>
