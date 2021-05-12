@@ -30,8 +30,8 @@
 
   // set time bar
   // make sure that "automaticallyTrackDataSourceClocks: false" is set in viewer contructor
-  var start = Cesium.JulianDate.fromIso8601("2020-07-06T07:43:40Z");
-  var stop = Cesium.JulianDate.fromIso8601("2020-07-06T07:52:40Z");
+  var start = Cesium.JulianDate.fromIso8601("2021-01-01T00:00:00Z");
+  var stop = Cesium.JulianDate.fromIso8601("2021-01-01T00:22:00Z");
 
   viewer.timeline.zoomTo(start, stop);
 
@@ -49,7 +49,7 @@
   // change the "DocumentRoot" apache folder in xampp to your project: https://stackoverflow.com/questions/18902887/how-to-configuring-a-xampp-web-server-for-different-root-directory
 
 
-var trajectory  = Cesium.IonResource.fromAssetId(446667)
+var trajectory  = Cesium.IonResource.fromAssetId(457979)
   .then(function (resource) {
     return Cesium.KmlDataSource.load(resource, );
   });
