@@ -28,8 +28,8 @@ This repository provides an introduction on how to use cesium and related techni
 
 ## Cesium time dynamic trajectory
 
- [6-cesium_time_dynamic_kml.html  ](https://github.com/pinguinonice/lab-visualisierung/blob/main/examples/6-cesium_time_dynamic_kml.html) is an example on how to display a time dynamic trajectory. For this, we firstly need to provide a proper .kml file (which can be the output of [6-txt2kml.py  ](https://github.com/pinguinonice/lab-visualisierung/blob/main/examples/6-txt2kml.py)) and upload it to cesium ion. The .kml is similar to this example https://developers.google.com/kml/documentation/time?csw=1. The visibility of the trajectory can be triggered with a checkbox.
+ [5-cesium_time_dynamic_kml.html  ](https://github.com/pinguinonice/lab-visualisierung/blob/main/examples/5-cesium_time_dynamic_kml.html) is an example on how to display a time dynamic trajectory. For this, we firstly need to provide a proper .kml file (which can be the output of [5-txt2kml.py  ](https://github.com/pinguinonice/lab-visualisierung/blob/main/examples/5-txt2kml.py)) and upload it to cesium ion. The .kml is similar to this example https://developers.google.com/kml/documentation/time?csw=1. The visibility of the trajectory can be triggered with a checkbox.
 
- [6-cesium_time_dynamic_local_kml.html  ](https://github.com/pinguinonice/lab-visualisierung/blob/main/examples/6-cesium_time_dynamic_local_kml.html)  is the same example using a local file (requires localhosting, e.g. via XAMPP).
+ [5-cesium_time_dynamic_local_kml.html  ](https://github.com/pinguinonice/lab-visualisierung/blob/main/examples/5-cesium_time_dynamic_local_kml.html)  is the same example using a local file (requires localhosting, e.g. via XAMPP).
 
 ![image](docu/timedynamic.PNG)
