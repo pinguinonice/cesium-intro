@@ -1,0 +1,73 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <!--  Cesium Libary-->
+  <script src="https://cesium.com/downloads/cesiumjs/releases/1.81/Build/Cesium/Cesium.js"></script>
+   <link href="https://cesium.com/downloads/cesiumjs/releases/1.81/Build/Cesium/Widgets/widgets.css" rel="stylesheet">
+
+</head>
+<body>
+  <div id="cesiumContainer" style="width: 1400px; height:800px"></div>  <br>
+  <input type="checkbox" id="Check1" name="r1" value=true onclick="Check()" checked> Trajectory  <br>  <!--  this checkbox is checke!-->
+
+  <script>
+    // the acces token from cesium website
+    Cesium.Ion.defaultAccessToken = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiIxZTIxZDg4My00YjJkLTQzN2QtYmMxOC05Njk4ZGFkZTQzN2YiLCJpZCI6MTU1ODQsInNjb3BlcyI6WyJhc3IiLCJnYyJdLCJpYXQiOjE1NjgyMTc1MjN9.UDZ_I4jPXqWed_FjHIELbp016IuCNMBzsPexMe3jM3k';
+
+  //  create a new viewver with a DSM and base image
+  var viewer = new Cesium.Viewer("cesiumContainer", {
+    automaticallyTrackDataSourceClocks: false,
+    terrainProvider: new Cesium.CesiumTerrainProvider({  // this is the DSM
+      url: Cesium.IonResource.fromAssetId(1),
+    }),
+    imageryProvider: Cesium.createWorldImagery({
+      style: Cesium.IonWorldImageryStyle.AERIAL   // this is the Baseimage
+    })
+  });
+
+  // set time bar
+  // make sure that "automaticallyTrackDataSourceClocks: false" is set in viewer contructor
+  var start = Cesium.JulianDate.fromIso8601("2020-07-06T07:43:40Z");
+  var stop = Cesium.JulianDate.fromIso8601("2020-07-06T07:52:40Z");
+
+  viewer.timeline.zoomTo(start, stop);
+
+  var clock = viewer.clock;
+  clock.startTime = start;
+  clock.currentTime = start;
+  clock.stopTime = stop;
+  clock.clockRange = Cesium.ClockRange.LOOP_STOP;
+  clock.multiplier = 100;
+  clock.shouldAnimate = true; // if true the animation will start on load
+
+
+// ADD trajectory
+
+
+// important: to have acces to local files you must install xampp https://www.apachefriends.org/de/index.html
+// change the "DocumentRoot" apache folder in xampp to your project: https://stackoverflow.com/questions/18902887/how-to-configuring-a-xampp-web-server-for-different-root-directory
+
+var trajectory = new Cesium.KmlDataSource(); //
+trajectory.load('data/kml/gelb_ellips.kml');
+
+Check(); // execute the Check() function, if Check1 == true, load the trajectory and zoom to it.
+
+function Check(){
+
+if (document.getElementById('Check1').checked == true) { // k if the buttons is checked
+  viewer.dataSources.add(trajectory);  // make the trajectory visible
+  viewer.zoomTo(trajectory);
+}
+
+else {
+  viewer.dataSources.remove(trajectory); // hide the trajectory
+  }
+};
+
+
+  </script>
+</body>
+</html>
