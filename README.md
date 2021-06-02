@@ -13,7 +13,6 @@ This repository provides an introduction on how to use cesium and related techni
 
 ![example2](https://user-images.githubusercontent.com/9204823/112308888-f05ab880-8ca2-11eb-9c38-0b3e927303e4.PNG)
 
-change
 
 ## Cesium Hello World
 
