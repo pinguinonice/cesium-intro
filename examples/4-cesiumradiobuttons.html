@@ -22,7 +22,7 @@
     // the acces token from cesium website
     Cesium.Ion.defaultAccessToken = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiIxZTIxZDg4My00YjJkLTQzN2QtYmMxOC05Njk4ZGFkZTQzN2YiLCJpZCI6MTU1ODQsInNjb3BlcyI6WyJhc3IiLCJnYyJdLCJpYXQiOjE1NjgyMTc1MjN9.UDZ_I4jPXqWed_FjHIELbp016IuCNMBzsPexMe3jM3k';
 
-  //  create a new viewver with a DSM and base image
+  //  create a new viewer with a DSM and base image
   var viewer = new Cesium.Viewer("cesiumContainer", {
     terrainProvider: new Cesium.CesiumTerrainProvider({  // this is the DSM
       url: Cesium.IonResource.fromAssetId(109141),
@@ -68,24 +68,24 @@
     function Check(){
 
       if (document.getElementById('Check1').checked == true) { // k if the buttons is checked
-        tilesetPC.show = true; // make the image visible
+        tilesetPC.show = true; // make the point cloud visible
       }
       else {
-        tilesetPC.show = false; // make the image visible
+        tilesetPC.show = false; // make the point cloud invisible
         }
 
       if (document.getElementById('Check2').checked == true) {
-        tilesetMS.show = true; // make the image visible
+        tilesetMS.show = true; // make the mesh visible
       }
       else {
-        tilesetMS.show = false; // make the image visible
+        tilesetMS.show = false; // make the mesh invisible
       }
 
       if (document.getElementById('Check3').checked == true) {
           imageryLayer_ortho.show = true;  // make the image visible
       }
       else {
-          imageryLayer_ortho.show  = false; // make the image visible
+          imageryLayer_ortho.show  = false; // make the image invisible
       }
 
     }
